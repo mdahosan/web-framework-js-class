@@ -1,0 +1,54 @@
+node -v
+
+npm init
+
+npm install package_name --save //--save is for update package.json file
+
+npm install lodash
+
+npm install --save-d gulp //dev dependency
+
+npm install -g nodemon //-g for global dependency nodemon for liveserver
+
+nodemon app.js // for live changes
+
+npm install -g live-server //for live change on browser
+
+live-server //for start live-server (live-server --port=8090)
+
+change the script on package.json
+
+ES6 Features:
+Let and const
+Template string
+Arrow function
+Enhance object
+Destructuring
+Default parameter
+Map, set
+Spread operator
+Iterators
+Generators
+Class
+Inheritance
+Modules
+Promises
+
+webpack is a module bundler. Its main purpose is to bundle JavaScript files.
+
+npm install -D babel-loader @babel/core @babel/preset-env webpack
+npm install --save-dev webpack-cli -D
+create .babelrc file
+create webpack.config.js
+create src directory and index.js
+edit webpack.config.js
+
+add es6 code on src/index.js
+edit package.json
+add script     "dev": "webpack --mode development",     "build": "webpack --mode production",
+
+
+/////next class oop finishing + es6
+/////next dom
+////next revision on js
+////next vue.js
