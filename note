@@ -46,9 +46,3 @@ edit webpack.config.js
 add es6 code on src/index.js
 edit package.json
 add script     "dev": "webpack --mode development",     "build": "webpack --mode production",
-
-
-/////next class oop finishing + es6
-/////next dom
-////next revision on js
-////next vue.js

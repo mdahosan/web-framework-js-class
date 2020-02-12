@@ -7,7 +7,7 @@ const path = require('path');
 module.exports = {
     entry: {
         app: './src/index.js',
-        arrow_function: './src/arrow-function.js',
+        calculator: './src/6.es6(module-system).js'
     },
     output:{
         path: path.resolve(__dirname, 'dist'),
