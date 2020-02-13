@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+
+<button id="showUser">Display</button>
+
+<table id="loadData">
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+    </tr>
+    </thead>
+    <tbody id="userList"></tbody>
+</table>
+
+<p>Footer</p>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+    // let a = 10;
+    // let b = 20;
+    // let c = 30;
+    //
+    // console.log(a);
+    //
+    // setTimeout(function () {
+    //     console.log(b);
+    // }, 1000);
+    //
+    // console.log(c);
+
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+    const fetchUrl = 'http://laravel6.test/api/users/';
+
+    // let btn = document.querySelector('#showUser')
+
+    // btn.addEventListener('click', index);
+
+    // window.onload = function () {
+    //
+    //     let loader = document.querySelector('#loadData');
+    //
+    //     let  span = document.createElement('span');
+    //     span.innerHTML = 'Loading.....';
+    //     loader.appendChild(span)
+    //     index();
+    //
+    // };
+
+    // function index() {
+    //     fetch(fetchUrl)
+    //         .then((response) => {
+    //             return response.json();
+    //         })
+    //         .then(data => {
+    //             let userList = document.querySelector('#userList');
+    //             // console.log(data.users)
+    //             data.users.forEach(function (user) {
+    //
+    //                 let tr = document.createElement('tr');
+    //
+    //                 let tdName = document.createElement('td');
+    //                 tdName.innerHTML = user.name;
+    //                 tr.appendChild(tdName);
+    //
+    //                 let tdEmail = document.createElement('td');
+    //                 tdEmail.innerHTML = user.email;
+    //                 tr.appendChild(tdEmail);
+    //                 userList.appendChild(tr);
+    //                 console.log(user.email)
+    //             })
+    //             let  span = document.createElement('span');
+    //             span.innerHTML = '';
+    //
+    //         })
+    //         .catch(err => console.log(err));
+    // }
+
+    function index() {
+        axios.get(fetchUrl)
+        .then(function (response) {
+            // handle success
+            // console.log(response.data.users);
+
+            let userList = document.querySelector('#userList');
+
+            // console.log(data.users)
+            response.data.users.forEach(function (user) {
+
+                let tr = document.createElement('tr');
+
+                let tdName = document.createElement('td');
+                tdName.innerHTML = user.name;
+                tr.appendChild(tdName);
+
+                let tdEmail = document.createElement('td');
+                tdEmail.innerHTML = user.email;
+                tr.appendChild(tdEmail);
+                userList.appendChild(tr);
+                console.log(user.email)
+            });
+        let  span = document.createElement('span');
+        span.innerHTML = '';
+
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        });
+    }
+
+</script>
+</body>
+</html>
